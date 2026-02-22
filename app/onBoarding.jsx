@@ -1,7 +1,7 @@
-import React from "react";
-import { View, Text, StyleSheet } from "react-native";
+import LottieView from "lottie-react-native";
+import { Dimensions, StyleSheet, Text, View } from "react-native";
 import Onboarding from "react-native-onboarding-swiper";
-
+const { width } = Dimensions.get("window");
 const OnBoarding = () => {
   return (
     <View style={styles.container}>
@@ -9,47 +9,61 @@ const OnBoarding = () => {
         containerStyles={{ paddingHorizontal: 15 }}
         pages={[
           {
-            backgroundColor: "#fff",
+            backgroundColor: "#a7f3d0",
             image: (
-              <View>
-                <Text>Onboarding Screen 1</Text>
-              </View>
+              <LottieView
+                source={require("../assets/animations/boost.json")}
+                autoPlay
+                loop
+                style={styles.lottie}
+              />
             ),
             title: "Boost Productivity",
-            subtitle: "Subscribe the channel to boost your productivity and learn new things",
+            subtitle:
+              "Subscribe the channel to boost your productivity and learn new things",
           },
           {
-            backgroundColor: "#fff",
+            backgroundColor: "#fef3c7",
             image: (
-              <View>
-                <Text>Onboarding Screen 2</Text>
-              </View>
+              <LottieView
+                source={require("../assets/animations/seamlessly.json")}
+                autoPlay
+                loop
+                style={styles.lottie}
+              />
             ),
             title: "Work Seamlessly",
-            subtitle: "Get Your work done seamlessly without interruptions and distractions. ",
+            subtitle:
+              "Get Your work done seamlessly without interruptions and distractions. ",
           },
           {
-            backgroundColor: "#fff",
+            backgroundColor: "#a78bfa",
             image: (
-              <View>
-                <Text>Onboarding Screen 3</Text>
-              </View>
+              <LottieView
+                source={require("../assets/animations/Bussiness.json")}
+                autoPlay
+                loop
+                style={styles.lottie}
+              />
             ),
             title: "Achieve Higher Goals",
-            subtitle: "By boosting your productivity you can achieve higher goals.",
+            subtitle:
+              "By boosting your productivity you can achieve higher goals.",
           },
         ]}
       />
     </View>
   );
 };
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "#fff",
+  },
+  lottie: {
+    width: width * 0.9,
+    height: width,
+  },
+});
 
 export default OnBoarding;
-
-
-const styles = StyleSheet.create({
-    container : {
-        flex : 1,
-        backgroundColor : "#fff",
-    }
-})
