@@ -1,11 +1,12 @@
-import { Text, View } from "react-native";
+import { View, Text } from 'react-native'
+import React from 'react'
 
-const modal = () => {
+const index = () => {
   return (
     <View>
-      <Text>modal</Text>
+      <Text>Home Screen</Text>
     </View>
-  );
-};
+  )
+}
 
-export default modal;
+export default index
