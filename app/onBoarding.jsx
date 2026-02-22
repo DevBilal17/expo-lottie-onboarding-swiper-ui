@@ -2,12 +2,15 @@ import { useNavigation } from "expo-router";
 import LottieView from "lottie-react-native";
 import { Dimensions, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import Onboarding from "react-native-onboarding-swiper";
+import { setItem } from "../utils/asyncStorage";
 const { width } = Dimensions.get("window");
 const OnBoarding = () => {
     const navigation = useNavigation();
     const handleDone = () => {
         navigation.navigate("index");
+        setItem("onboardingCompleted","true")
     }
+
     const doneButton = ({ ...props }) => (
         <TouchableOpacity {...props} style={styles.doneButton}>
             <Text >Done</Text>
